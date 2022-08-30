@@ -1,32 +1,25 @@
+import model.ContaBancaria;
+
+import javax.xml.transform.stream.StreamSource;
+
 public class App {
-    public static void main(String[]args){
-        System.out.println("Aprendendo POO com Java");
 
-        // instanciando uma classe e construindo um objeto
-        Pessoa pessoa1 = new Pessoa();
-        pessoa1.nome = "Denise";
-        pessoa1.idade = 21;
-        pessoa1.setNome("Bruno");
-        pessoa1.setIdade(27);
+    public  static  void main(String[]args){
+        System.out.println("Banco Nubank");
+        System.out.println();
 
 
-        System.out.println(pessoa1.nome);
-        System.out.println(pessoa1.idade);
-        /**System.out.println(pessoa1.getNome());
-        System.out.println(pessoa1.getIdade());**/
+        ContaBancaria conta = new ContaBancaria("001","12345", 6, 100.00);
+        System.out.println("Saldo atual" + conta.getSaldo());
+        System.out.println();
 
-        Carro carro = new Carro();
-        carro.setAno(2022);
-        carro.setCor("Perto");
-        carro.setModelo("Uno");
+        conta.depositar(300);
+        System.out.println("Saldo atual" + conta.getSaldo());
+        System.out.println();
 
-
-        System.out.println(carro.getAno());
-        System.out.println(carro.getCor());
-        System.out.println(carro.getModelo());
-
-        ConstrutorPersonalizado construir = new ConstrutorPersonalizado(22, "azul");
-
+        var saque = conta.sacar(500);
+        System.out.println("Saldo atual" + conta.getSaldo());
+        System.out.println();
 
     }
 }
