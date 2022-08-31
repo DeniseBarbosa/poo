@@ -1,6 +1,7 @@
 import model.ContaBancaria;
 import model.ContaCorrente;
 import model.ContaPoupanca;
+import utils.DataUtil;
 
 import javax.xml.transform.stream.StreamSource;
 
@@ -31,6 +32,18 @@ public class App {
 
         System.out.println("Saldo da conta destino R$" + conta.getSaldo());
         System.out.println();
+
+
+
+        var formatar = DataUtil.ConverteDataHora(conta2.getDataAbertura());
+        var formatar1 = DataUtil.Hora(conta2.getDataAbertura());
+        var formatar2 = DataUtil.Data(conta2.getDataAbertura());
+            System.out.println(formatar);
+            System.out.println(formatar1);
+            System.out.println(formatar2);
+
+
+
 
     }
 }
