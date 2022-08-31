@@ -1,6 +1,7 @@
 import model.ContaBancaria;
 import model.ContaCorrente;
 import model.ContaPoupanca;
+import model.Movimentacao;
 import utils.DataUtil;
 
 import javax.xml.transform.stream.StreamSource;
@@ -10,6 +11,8 @@ public class App {
     public  static  void main(String[]args){
         System.out.println("Banco Nubank");
         System.out.println();
+
+
 
 
         ContaCorrente conta = new ContaCorrente("001","12345", 6, 100.0);
@@ -42,7 +45,8 @@ public class App {
             System.out.println(formatar1);
             System.out.println(formatar2);
 
-
+        Movimentacao movimentacao = new Movimentacao("Saque", 100.00);
+        System.out.println(movimentacao.toString());
 
 
     }
