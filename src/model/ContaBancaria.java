@@ -47,7 +47,7 @@ public class ContaBancaria {
     }
 
 
-    public void depositar(double valor){
+    public void depositar(Double valor){
         // verifica se o valor de deposito é menor que o valor minimo
         // se for não pode acontecer o deposito
         if(valor < VALOR_MINIMO_DEPOSITO){
@@ -56,13 +56,20 @@ public class ContaBancaria {
         this.saldo = this.saldo + valor;
     }
 
-    public double sacar( double valor){
+    public Double sacar( Double valor){
+
         //Verifica se o valor é maior que o saldo da conta se for maior o cliente recebe uma notificação
-        if (valor > this.saldo){
-            throw new InputMismatchException("Saldo é insuficiente");
-        }
         this.saldo = this.saldo - valor;
         return valor;
+    }
+
+
+    public void transferir(Double valor, ContaBancaria contaDestino){
+        // efetua um saque na conta atual
+        // efetua na conta de destino
+        this.sacar(valor);
+
+        contaDestino.depositar(valor);
     }
 
 
